@@ -1,31 +1,4 @@
-# RepoEstadistica
-En este repositorio voy a guardar un .md con cada metodo, para no tener que buscar en cada archivo R
-
-## Metodos de Estadistica
-- Promedio 
-~~~
-mean()
-~~~
-- Histograma
-~~~
-hist()
-~~~
-- BoxPlot
-~~~
-boxplot()
-boxplot(,horizontal=TRUE)
-~~~
-- Varianza
-~~~
-var()
-~~~
-
-
-
-
-
-
-
+#NOTAS DE CLASE DE TELEMATICA, PASAR AL CUADERNO, ES QUE NO ME DIO PARA COPIAR
 # CLASE TEMPORAL 30 AGOSTO 
 - Interprocess Comunication 
   + mecanismo que permite la comunicación entre proceoss que se ejecutan sobre la misma maquina
@@ -49,4 +22,25 @@ var()
   + ¿como funcionan los sockets?
     - los clientes se conectan al servidor, intercambian información y luego se desconectan 
     -
-  
+--------------  
+# RepoEstadistica
+En este repositorio voy a guardar un .md con cada metodo, para no tener que buscar en cada archivo R
+
+## Metodos de Estadistica
+- Promedio 
+~~~
+mean()
+~~~
+- Histograma
+~~~
+hist()
+~~~
+- BoxPlot
+~~~
+boxplot()
+boxplot(,horizontal=TRUE)
+~~~
+- Varianza
+~~~
+var()
+~~~
