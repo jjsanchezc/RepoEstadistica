@@ -10,3 +10,12 @@ mean()
 ~~~
 hist()
 ~~~
+- BoxPlot
+~~~
+boxplot()
+boxplot(,horizontal=TRUE)
+~~~
+- Varianza
+~~~
+var()
+~~~
