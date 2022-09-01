@@ -1,3 +1,12 @@
+#CLASE 1 SEPTIEMBRE ESTADISTICA GENERAL
+- distribuciones
+    - Me ayuda a modelar el grupo de entradas que recibe el problema
+
+
+
+
+
+
 #NOTAS DE CLASE DE TELEMATICA, PASAR AL CUADERNO, ES QUE NO ME DIO PARA COPIAR
 # CLASE TEMPORAL 30 AGOSTO 
 - Interprocess Comunication 
