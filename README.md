@@ -21,17 +21,6 @@
 ---
 # NOTAS DE CLASE DE TELEMATICA, PASAR AL CUADERNO, ES QUE NO ME DIO PARA COPIAR
 ## CLASE TEMPORAL 30 AGOSTO 
-- Interprocess Comunication 
-  + mecanismo que permite la comunicación entre proceoss que se ejecutan sobre la misma maquina
-  + la comunicación puede ser sincronica o asincronica
-- cliente/servidor
-  + iente envia una petición y el server envía una respuesta 
-  + El servidor puede desarrollar una tarea simple o compleja de acuerdo a la peticion
-  + tipos:
-     - secuencial
-        + no tiene capacidad de operar de forma concurrente 
-     - concurrente
-        + pude atender difetentes peticiones de forma simultanea
 - Programación en Red 
   + ¿como interactuan los programadores con los protocolos en red?
     - a traves de las API Sockets
