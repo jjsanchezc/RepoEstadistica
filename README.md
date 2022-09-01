@@ -1,4 +1,5 @@
-# CLASE 1 SEPTIEMBRE ESTADISTICA GENERAL
+# BORRAR LA PARTE DE LA CLASE, NO TENIA EL CUADERNO
+## CLASE 1 SEPTIEMBRE ESTADISTICA GENERAL
 - distribuciones
   - Me ayuda a modelar el grupo de entradas que recibe el problema
   - Tipos de distribicuiones:
