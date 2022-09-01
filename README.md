@@ -1,14 +1,26 @@
-#CLASE 1 SEPTIEMBRE ESTADISTICA GENERAL
+# CLASE 1 SEPTIEMBRE ESTADISTICA GENERAL
 - distribuciones
-    - Me ayuda a modelar el grupo de entradas que recibe el problema
+  - Me ayuda a modelar el grupo de entradas que recibe el problema
+  - Tipos de distribicuiones:
+    - Discretas
+      - Uniforme
+      - Binominal
+      - Poisson 
+      - Otras
+    - Continua 
+      - Uniforme 
+      - Nominal
+      - Exponencial
+      - otras
 
 
 
 
 
 
-#NOTAS DE CLASE DE TELEMATICA, PASAR AL CUADERNO, ES QUE NO ME DIO PARA COPIAR
-# CLASE TEMPORAL 30 AGOSTO 
+---
+# NOTAS DE CLASE DE TELEMATICA, PASAR AL CUADERNO, ES QUE NO ME DIO PARA COPIAR
+## CLASE TEMPORAL 30 AGOSTO 
 - Interprocess Comunication 
   + mecanismo que permite la comunicación entre proceoss que se ejecutan sobre la misma maquina
   + la comunicación puede ser sincronica o asincronica
