@@ -1,0 +1,75 @@
+---
+title: "Laboratorio#2"
+author: Julian Andres Ramirez, Samuel David, Isaac Tadina, Jose Manuel Fonseca, Juan Jose Sanchez
+output: html_document
+---
+
+## Bloque 1 
+
+### punto 1
+
+-   Simule el lanzamiento de dos dados en R con un tamaño de muestra inicial de 100
+
+    ```{r}
+
+    ```
+
+### punto 2
+
+-   Construya una tabla d efrecuancias relativas cruzadas
+
+    ```{r}
+
+    ```
+
+### punto 3
+
+-   Realice la misma simulación del punto 1, pero esta vez cambie los tamaños de muestra para n=10e3 y 10e5. ¿Qué observa?, ¿Cómo cambia la tabla de frecuencias relativas cruzada?
+
+    ```{r}
+
+    ```
+
+### punto 4
+
+-   Guarde en un data frame la simulación con el último tamaño de muestra. Encuentre la probabilidad para Y = 1 y compárela con la probabilidad condicional de Y = 1 dado X = 3. ¿Qué puede concluir? Considere a X como el resultado obtenido en el dado 1 y Y como el resultado obtenido en el dado 2
+
+    ```{r}
+
+    ```
+
+### punto 5
+
+-   Defina el evento A como: la suma de los dos dados es al menos 9 y el evento B como: ambos números son iguales. Encuentre 𝑃(𝐴 ∪ 𝐵), 𝑃(𝐵̅ ), 𝑃(𝐴̅ ∩ 𝐵̅ ) y 𝑃(𝐴 ∩ 𝐵)
+
+    ```{r}
+
+    ```
+
+------------------------------------------------------------------------
+
+# BORRAR DE ACA PARA ABAJO (NO LO HE BORRADO PORQUE NOS PUEDE SERVIR)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
