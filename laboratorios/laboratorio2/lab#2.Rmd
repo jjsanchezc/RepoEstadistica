@@ -4,13 +4,15 @@ author: Julian Andres Ramirez, Samuel David, Isaac Tadina, Jose Manuel Fonseca, 
 output: html_document
 ---
 
-## Bloque 1 
+## Bloque 1
 
 ### punto 1
 
 -   Simule el lanzamiento de dos dados en R con un tamaño de muestra inicial de 100
 
     ```{r}
+    b=3
+    algo=b
 
     ```
 
@@ -46,10 +48,45 @@ output: html_document
 
     ```
 
+## Bloque 2
+
+-   Suponga que se cuenta con una prueba para detectar la enfermedad A, que es positiva el 90% de las veces cuando se realiza en un paciente que tiene dicha enfermedad, y es negativa el 95% de las veces cuando se realiza en una persona que no tiene la enfermedad. También se sabe que la enfermedad afecta a un 1% de la población.
+
+### Punto 1
+-   Construya una muestra aleatoria de tamaño 100000, que contenga “Sí” y “No”, con probabilidades de 1% y 99%, respectivamente.
+
+### Punto 2
+-   Construya una muestra aleatoria a partir del vector de valores (“Negativo” y “Positivo”), que de
+cuenta de que la probabilidad de que el test salga “Negativo” dado que “No” tiene la
+enfermedad A es del 95%. Presente tablas de contingencia cruzadas condicionadas de acuerdo
+con si tiene o no tiene la enfermedad.
+
+### Punto 3
+-   Construya una muestra aleatoria a partir del vector de valores (“Negativo” y “Positivo”), que de
+cuenta de que la probabilidad de que el test salga “Positivo” dado que “Sí” tiene la enfermedad
+A es del 90%. Presente tablas de contingencia cruzadas condicionadas de acuerdo con si tiene o
+no tiene la enfermedad.
+
+### Punto 4
+-   Calcule la probabilidad de tener la enfermedad dado que el test salió positivo. Realice los
+cálculos utilizando las variables simuladas.
+
+### Punto 5
+-   Realice los cálculos del punto anterior, utilizando la información del enunciado y el Teorema de
+Bayes. ¿Qué puede concluir
+
+
+
+
+
+
+
+
 ------------------------------------------------------------------------
 
 # BORRAR DE ACA PARA ABAJO (NO LO HE BORRADO PORQUE NOS PUEDE SERVIR)
 
+##para ejecutar y ver el preview, es con CRL+SHIFT+K
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
