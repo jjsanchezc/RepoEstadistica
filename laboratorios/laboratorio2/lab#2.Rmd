@@ -18,7 +18,7 @@ output: html_document
 
 ### punto 2
 
--   Construya una tabla d efrecuancias relativas cruzadas
+-   Construya una tabla de frecuancias relativas cruzadas
 
     ```{r}
       table(simulacion1$dado1,simulacion1$dado2)
@@ -29,6 +29,8 @@ output: html_document
 -   Realice la misma simulación del punto 1, pero esta vez cambie los tamaños de muestra para n=10e3 y 10e5. ¿Qué observa?, ¿Cómo cambia la tabla de frecuencias relativas cruzada?
 
     ```{r}
+    
+    
      dado3 = sample(c("1","2","3","4","5","6"), size = 10000, replace = TRUE)
       dado4 = sample(c("1","2","3","4","5","6"), size = 10000, replace = TRUE)
       simulacion2 = as.data.frame(cbind(dado3,dado4))
@@ -40,6 +42,11 @@ output: html_document
       simulacion3 = as.data.frame(cbind(dadoX,dadoY))
       table(simulacion3$dadoX,simulacion3$dadoY)
     ```  
+   ¿que observa?¿Cómo cambia la tabla de frecuencias relativas cruzada?
+  R) Podemos ver que a medida que el tamaño de muestra se va volviendo mas grande, los resultados en la tabla de frecuencia relativa cruzada se van volviendo mas cercanos
+    
+    
+
 
 ### punto 4
 
@@ -54,12 +61,20 @@ output: html_document
     ```{r}
     mean(simulacion3[simulacion3$dadoX==3,]$dadoY==1)
     ```
+  ¿Qué puede concluir?
+  R) Gracias a los resultados obtenidos podemos ver que el resultado obtenido en el dado X no afecta en nada al resultado Y. (MUTUAMENTE EXCLUYENTES)
 
 ### punto 5
 
 -   Defina el evento A como: la suma de los dos dados es al menos 9 y el evento B como: ambos números son iguales. Encuentre 𝑃(𝐴 ∪ 𝐵), 𝑃(𝐵̅ ), 𝑃(𝐴̅ ∩ 𝐵̅ ) y 𝑃(𝐴 ∩ 𝐵)
 
     ```{r}
+    #La suma de dos dados es al menos 9
+    ```
+    ```{r}
+    #Ambos numeros son iguales
+    B = mean(simulacion3$dadoX==simulacion3$dadoY)
+    B
     ```
 
 ## Bloque 2
@@ -101,26 +116,4 @@ Bayes. ¿Qué puede concluir
 # BORRAR DE ACA PARA ABAJO (NO LO HE BORRADO PORQUE NOS PUEDE SERVIR)
 
 ##para ejecutar y ver el preview, es con CRL+SHIFT+K
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
