@@ -3,9 +3,7 @@ title: "Laboratorio#2"
 author: Julian Andres Ramirez, Samuel David, Isaac Tadina, Jose Manuel Fonseca, Juan Jose Sanchez
 output: html_document
 ---
-  ```{r}
-    library(dplyr)
-  ```
+
 ## Bloque 1
 
 ### punto 1
@@ -13,34 +11,35 @@ output: html_document
 -   Simule el lanzamiento de dos dados en R con un tamaño de muestra inicial de 100
 
     ```{r}
-    dado1 = sample(c("1","2","3","4","5","6"), size = 100, replace = TRUE)
-    dado2 = sample(c("1","2","3","4","5","6"), size = 100, replace = TRUE)
-    simulacion1 = as.data.frame(cbind(dado1,dado2))
+      dado1 = sample(c("1","2","3","4","5","6"), size = 100, replace = TRUE)
+      dado2 = sample(c("1","2","3","4","5","6"), size = 100, replace = TRUE)
+      simulacion1 = as.data.frame(cbind(dado1,dado2))
     ```
-    ### punto 2
 
--   Construya una tabla de frecuancias relativas cruzadas
+### punto 2
+
+-   Construya una tabla d efrecuancias relativas cruzadas
+
     ```{r}
       table(simulacion1$dado1,simulacion1$dado2)
     ```
-    
+
 ### punto 3
 
 -   Realice la misma simulación del punto 1, pero esta vez cambie los tamaños de muestra para n=10e3 y 10e5. ¿Qué observa?, ¿Cómo cambia la tabla de frecuencias relativas cruzada?
+
     ```{r}
-    dado3 = sample(c("1","2","3","4","5","6"), size = 10000, replace = TRUE)
-    dado4 = sample(c("1","2","3","4","5","6"), size = 10000, replace = TRUE)
-    simulacion2 = as.data.frame(cbind(dado3,dado4))
-    table(simulacion2$dado3,simulacion2$dado4)
+     dado3 = sample(c("1","2","3","4","5","6"), size = 10000, replace = TRUE)
+      dado4 = sample(c("1","2","3","4","5","6"), size = 10000, replace = TRUE)
+      simulacion2 = as.data.frame(cbind(dado3,dado4))
+      table(simulacion2$dado3,simulacion2$dado4)
     ```
     ```{r}
-    dadoX = sample(c("1","2","3","4","5","6"), size = 1000000, replace = TRUE)
-    dadoY = sample(c("1","2","3","4","5","6"), size = 1000000, replace = TRUE)
-    simulacion3 = as.data.frame(cbind(dadoX,dadoY))
-    table(simulacion3$dadoX,simulacion3$dadoY)
+      dadoX = sample(c("1","2","3","4","5","6"), size = 1000000, replace = TRUE)
+      dadoY = sample(c("1","2","3","4","5","6"), size = 1000000, replace = TRUE)
+      simulacion3 = as.data.frame(cbind(dadoX,dadoY))
+      table(simulacion3$dadoX,simulacion3$dadoY)
     ```  
-- R/ Al aumentar el tamaño de la muestra se pudo observar que .......
-
 
 ### punto 4
 
@@ -48,22 +47,21 @@ output: html_document
 
 -Probabilidad para Y=1
     ```{r}
-    mean(simulacion3$dadoY==1)#Probabilidad para Y=1
+      mean(simulacion3$dadoY==1)#Probabilidad para Y=1
     ```
 -Probabilidad para Y=1 dado X=3
 
     ```{r}
     mean(simulacion3[simulacion3$dadoX==3,]$dadoY==1)
     ```
+
 ### punto 5
 
 -   Defina el evento A como: la suma de los dos dados es al menos 9 y el evento B como: ambos números son iguales. Encuentre 𝑃(𝐴 ∪ 𝐵), 𝑃(𝐵̅ ), 𝑃(𝐴̅ ∩ 𝐵̅ ) y 𝑃(𝐴 ∩ 𝐵)
 
-P(B)
     ```{r}
-    mean(simulacion3$dadoX==simulacion3$dadoY)
     ```
-    
+
 ## Bloque 2
 
 -   Suponga que se cuenta con una prueba para detectar la enfermedad A, que es positiva el 90% de las veces cuando se realiza en un paciente que tiene dicha enfermedad, y es negativa el 95% de las veces cuando se realiza en una persona que no tiene la enfermedad. También se sabe que la enfermedad afecta a un 1% de la población.
