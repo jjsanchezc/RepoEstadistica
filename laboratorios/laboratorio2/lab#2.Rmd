@@ -45,8 +45,8 @@ output: html_document
       simulacion3 = as.data.frame(cbind(dadoX,dadoY))
       table(simulacion3$dadoX,simulacion3$dadoY)
     ```  
-   ¿que observa?¿Cómo cambia la tabla de frecuencias relativas cruzada?
-  R) Podemos ver que a medida que el tamaño de muestra se va volviendo mas grande, los resultados en la tabla de frecuencia relativa cruzada se van volviendo mas cercanos
+   ¿Que observa?¿Cómo cambia la tabla de frecuencias relativas cruzada?
+  R) Podemos ver que a medida que el tamaño de muestra se va volviendo mas grande, los resultados en la     tabla de frecuencia relativa cruzada se van volviendo mas cercanos
     
     
 
@@ -84,48 +84,126 @@ output: html_document
     B = mean(simulacion3$dadoX==simulacion3$dadoY)
     B
     ```
+- 𝑃(𝐴 ∩ 𝐵)
+    ```{r}
+     AnB = mean((simulacion3$dadoX==simulacion3$dadoY) & (simulacion3$dadoX+simulacion3$dadoY >= 9))
+      AnB
+    ```
+    
 - 𝑃(𝐴 ∪ 𝐵)
     ```{r}
-    AuB=A+B-mean(A)
+    AuB=A+B-AnB
+    AuB
     ```
-
+-𝑃(𝐵̅ )
+    ```{r}
+      B_c = 1 - B
+      B_c
+    ```
+- 𝑃(𝐴̅ ∩ 𝐵̅ )
+    ```{r}
+      Ac_n_Bc = 1 - AuB
+      Ac_n_Bc
+    ```
+  
 ## Bloque 2
 
 -   Suponga que se cuenta con una prueba para detectar la enfermedad A, que es positiva el 90% de las veces cuando se realiza en un paciente que tiene dicha enfermedad, y es negativa el 95% de las veces cuando se realiza en una persona que no tiene la enfermedad. También se sabe que la enfermedad afecta a un 1% de la población.
 
 ### Punto 1
 -   Construya una muestra aleatoria de tamaño 100000, que contenga “Sí” y “No”, con probabilidades de 1% y 99%, respectivamente.
+    ```{r}
+       muestra = sample(c("Si","No"), size = 100000,  replace = TRUE, prob = c(0.01,0.99))
+    ```
 
 ### Punto 2
 -   Construya una muestra aleatoria a partir del vector de valores (“Negativo” y “Positivo”), que de
 cuenta de que la probabilidad de que el test salga “Negativo” dado que “No” tiene la
 enfermedad A es del 95%. Presente tablas de contingencia cruzadas condicionadas de acuerdo
 con si tiene o no tiene la enfermedad.
+    ```{r}
+       pruebas = rep(NA,100000)
+       pruebas[muestra == 'No'] = sample(c('Positivo','Negativo'),
+                                          size = sum(muestra == 'No'),
+                                          replace = TRUE,
+                                          prob = c(0.05,0.95))
+       table(pruebas,muestra)
+       table(pruebas,muestra)/sum(muestra == 'No')
+       
+    ```
 
 ### Punto 3
 -   Construya una muestra aleatoria a partir del vector de valores (“Negativo” y “Positivo”), que de
 cuenta de que la probabilidad de que el test salga “Positivo” dado que “Sí” tiene la enfermedad
 A es del 90%. Presente tablas de contingencia cruzadas condicionadas de acuerdo con si tiene o
 no tiene la enfermedad.
-
+    ```{r}
+        pruebas = rep(NA,100000)
+       pruebas[muestra == 'Si'] = sample(c('Positivo','Negativo'),
+                                          size = sum(muestra == 'Si'),
+                                          replace = TRUE,
+                                          prob = c(0.9,0.1))
+       table(pruebas,muestra)
+        table(pruebas,muestra)/sum(muestra == 'Si')
+        
+    ```
+     
 ### Punto 4
--   Calcule la probabilidad de tener la enfermedad dado que el test salió positivo. Realice los
+-   Calcule la probabilidad de tener la enfermedad dado que el test  positivo. Realice los
 cálculos utilizando las variables simuladas.
+    ```{r}
+      pruebas[muestra == 'Si'] = sample(c('Positivo','Negativo'),
+                                          size = sum(muestra == 'Si'),
+                                          replace = TRUE,
+                                          prob = c(0.9,0.1))
+      pruebas[muestra == 'No'] = sample(c('Positivo','Negativo'),
+                                          size = sum(muestra == 'No'),
+                                          replace = TRUE,
+                                          prob = c(0.05,0.95))
+      prob = table(pruebas, muestra) / length(muestra)
+      prob
+      
+    ```
+Sea P(A) la probabilidad de tener la enfermedad y P(C) la probabilidad de que
+la pruebas salga positiva.
+La probabilidad de P(A/C) = P(A n C) / P(C), ahora teniendo en cuenta la tabla con 
+los datos simulados, tenemos que  P(A n C) = prob[4] / (prob[2] + prob[4])
+```{r}
+    A_dado_C = prob[4] / (prob[2] + prob[4])
+    A_dado_C
+```
 
+  
 ### Punto 5
 -   Realice los cálculos del punto anterior, utilizando la información del enunciado y el Teorema de
 Bayes. ¿Qué puede concluir
 
+Sea P(A) la probabilidad de tener la enfermedad, que es P(A)=0.01 
+
+Sea P(B) la probabilidad de no tenga la enfermedad, que es P(A)=0.99
+
+Sea P(C) la probabilidad de que la prueba salga positiva
+
+Sea P(C/A) la probabilidad de que la prueba salga positiva, dado que tiene la enfermedad, que es P(C/A) = 0.9
+
+Sea P(C/B) la probabilidad de que la prueba salga positiva, dado que no tiene la enfermedad, que es P(C/B) = 1 - 0.95 = 0.05
+
+En base al teorema de Bayes podemos afirmar que P(C):
+
+P(C) = P(C/A)*P(A) + P(C/B)P(B)
+= (0.9)*(0.01) + (0.05)(0.99)
+= 0.0585
+
+Ahora calculemos P(A/C)
+
+P(A/C) = P(A n C) / P(C)
+= P(C/A)*P(A) / P(C)
+ = ((0.9)(0.01)) /  0.0585 = 0.1538462
 
 
 
 
 
-
-
-------------------------------------------------------------------------
-
-# BORRAR DE ACA PARA ABAJO (NO LO HE BORRADO PORQUE NOS PUEDE SERVIR)
 
 ##para ejecutar y ver el preview, es con CRL+SHIFT+K
 
