@@ -57,12 +57,12 @@ output: html_document
 
 -Probabilidad para Y=1
     ```{r}
-      mean(simulacion3$dadoY==1)#Probabilidad para Y=1
+        mean(simulacion3$dadoY==1)#Probabilidad para Y=1
     ```
 -Probabilidad para Y=1 dado X=3
 
     ```{r}
-    mean(simulacion3[simulacion3$dadoX==3,]$dadoY==1)
+       mean(simulacion3[simulacion3$dadoX==3,]$dadoY==1)
     ```
   ¿Qué puede concluir?
   R) Gracias a los resultados obtenidos podemos ver que el resultado obtenido en el dado X no afecta en nada al resultado Y. (MUTUAMENTE EXCLUYENTES)
@@ -168,13 +168,14 @@ Sea P(A) la probabilidad de tener la enfermedad y P(C) la probabilidad de que
 la pruebas salga positiva.
 La probabilidad de P(A/C) = P(A n C) / P(C), ahora teniendo en cuenta la tabla con 
 los datos simulados, tenemos que  P(A n C) = prob[4] / (prob[2] + prob[4])
-```{r}
+    ```{r}
     A_dado_C = prob[4] / (prob[2] + prob[4])
     A_dado_C
-```
+    ```
 
   
 ### Punto 5
+
 -   Realice los cálculos del punto anterior, utilizando la información del enunciado y el Teorema de
 Bayes. ¿Qué puede concluir
 
@@ -199,6 +200,69 @@ Ahora calculemos P(A/C)
 P(A/C) = P(A n C) / P(C)
 = P(C/A)*P(A) / P(C)
  = ((0.9)(0.01)) /  0.0585 = 0.1538462
+ 
+## Bloque 3
+
+ ###Punto 1
+ 
+Simule 1000 valores para cada una de las distribuciones de probabilidad uniforme discreta,
+binomial, Poisson, uniforme continua, normal y Exponencial. Especifique libremente los parámetros
+para cada una de ellas. Encuentre media y desviación estándar para cada uno de los vectores
+simulados y compare dichos resultados con los obtenidos con las fórmulas de valor esperado y
+desviación estándar estudiados en clase.
+
+  Uniforme discreta
+ 
+ 
+  Binomial
+ 
+  - Media teorica = n * p = 5 * 0.3 = 1.5
+  
+  - Media con datos simulados :
+    ```{r}
+       datos_binom = rbinom(1000,5,0.3)
+       mean_binom = mean(datos_binom)
+       mean_binom
+    ```
+   - Desviación estandar teorica = n * p * q = sqrt (5 * 0.5 * 0.7) = sqrt(1.05) = 1.02
+   
+   - Desviacion estandar con datos simulados 
+    ```{r}
+    sd_binom = sd(datos_binom)
+    sd_binom
+    ```
+ 
+  Poisson
+  Media teorica = lambda = 5
+  Desviación estandar teorica = sqrt(varianza) = sqrt(lambda) = sqrt(5) = 2.24
+  -Media
+    
+    ```{r}
+       lambda = 5
+       datos_pois = rpois(1000,lambda)
+       mean_pois = mean(datos_pois)
+       mean_pois
+    ```
+      - Desviacion estandar
+    ```{r}
+       sd_pois = sd(datos_pois)
+       sd_pois
+    ```
+ 
+  Uniforme Continua
+  
+  
+  Normal
+
+
+  Exponencial 
+ 
+ 
+ ###Punto 2
+Calcule P{X ≤ 10} cuando X es una variable aleatoria binomial con parámetros n = 100, p = .1.
+Ahora compare esto con la (a) aproximación a través de la distribución Poisson y (b) aproximación 
+a través de la normal. Nota: Al utilizar la aproximación normal, escriba la probabilidad deseada como
+P(X < 10,5) para utilizar la corrección de continuidad.
 
 
 
