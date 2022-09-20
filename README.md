@@ -58,6 +58,12 @@ unif     # Uniforme
 weibull  # Weibull
 ~~~
 
+Ejemplos:
+~~~
+#si no me dan la x no puedo usar la pxxx
+qnorm(0.45,40,6)
+~~~
+
 
 # NOTA:
 Los parametros de cada funcion aparecen en rstudio cuando abrimos los parentesis, si no sale hacer el ?xxx (siendo xxx el comando que se quiere buscar la info)
