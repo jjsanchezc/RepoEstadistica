@@ -36,40 +36,28 @@ hyper     # Hipergeométrica
 pois      # Poisson
 multinom  # Multinomial
 ~~~
-- Binomial 
+
+### Distribuciones Continuas
 ~~~
-dbinom(x,n,p) #densidad
-pbinom(x,n,p) #probabilidad
+dxxx(x, ...)  # Función de densidad de probabilidad, f(x)
+pxxx(q, ...)  # Función de distribución acumulada hasta q, F(x)
+qxxx(p, ...)  # Cuantil para el cual P(X <= q) = p
+rxxx(n, ...)  # Generador de números aleatorios.
 ~~~
-- Poisson
 ~~~
-dpois()
+beta     # Beta
+cauchy   # Cauchy
+chisq    # Chi-cuadrada
+exp      # Exponencial
+f        # F
+gamma    # Gama
+lnorm    # log-normal
+norm     # normal
+t        # t-student
+unif     # Uniforme
+weibull  # Weibull
 ~~~
 
 
-
-
-
-
-
-
-
-
-
-
-# BORRAR LA PARTE DE LA CLASE, NO TENIA EL CUADERNO
-## CLASE 1 SEPTIEMBRE ESTADISTICA GENERAL
-- distribuciones
-  - Me ayuda a modelar el grupo de entradas que recibe el problema
-  - Tipos de distribicuiones:
-    - Discretas
-      - Uniforme
-      - Binominal
-      - Poisson 
-      - Otras
-    - Continua 
-      - Uniforme 
-      - Nominal
-      - Exponencial
-      - otras
---- 
+# NOTA:
+Los parametros de cada funcion aparecen en rstudio cuando abrimos los parentesis, si no sale hacer el ?xxx (siendo xxx el comando que se quiere buscar la info)
