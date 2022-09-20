@@ -22,10 +22,28 @@ var()
 ~~~
 
 ### Distribuciones Discretas
+~~~
+dxxx(x, ...)  # Función de masa de probabilidad, f(x)
+pxxx(q, ...)  # Función de distribución acumulada hasta q, F(x)
+qxxx(p, ...)  # Cuantil para el cual P(X <= q) = p
+rxxx(n, ...)  # Generador de números aleatorios.
+~~~
+~~~
+binom     # Binomial
+geo       # Geométrica
+nbinom    # Binomial negativa
+hyper     # Hipergeométrica
+pois      # Poisson
+multinom  # Multinomial
+~~~
 - Binomial 
 ~~~
 dbinom(x,n,p) #densidad
 pbinom(x,n,p) #probabilidad
+~~~
+- Poisson
+~~~
+dpois()
 ~~~
 
 
